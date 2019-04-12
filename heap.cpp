@@ -10,7 +10,7 @@ using namespace std;
 //insert using compare function
 	//compare
 	//if- extrime point
-	//insert (Csize is zero)
+	//insert (Csize is zero -if)
 //delete using MinHeapify
 	//
 	//
@@ -72,9 +72,8 @@ class Heap{
 		return arr[0];
 	}
 
-	//Delete function that dletes at particular position
 
-	int Delete(int i){
+	int delet(int i){
 		if(i>C_size || i<0){
 			 cout<<"position is large"<<endl;
 		}
@@ -91,8 +90,8 @@ class Heap{
 	void MinHeapify(int i){
 
 			if(i>C_size) return;
-			else if(arr[i]<arr[2*i+1] and arr[i]<arr[2*i+2]) return;
 			else if(2*i+1>C_size) return;
+			else if(arr[i]<arr[2*i+1] and arr[i]<arr[2*i+2]) return;
 			else if(2*i+2>C_size and 2*i+1<=C_size){
 				 swap(arr[i],arr[2*i+1]); 
 			}
@@ -108,7 +107,7 @@ class Heap{
 	}
 
 	int extractmin(){
-		return Delete(0);
+		return delet(0);
 	}
 
 
@@ -132,7 +131,7 @@ int main(){
 	h.extractmin();
 	h.display();
 	
-	h.Delete(4);
+	h.delet(4);
 	h.display();
 
 }		
