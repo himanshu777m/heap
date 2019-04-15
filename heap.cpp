@@ -71,6 +71,38 @@ class Heap{
 	int arr_min(){
 		return arr[0];
 	}
+	
+	/* Delete function without using minhepify 
+	delete using loop
+	
+	//swap with parent
+	void swap_p(int i){
+		int t = arr[parent(i)];
+		arr[parent(i)] = arr[i];
+		arr[i] = t;	
+	}
+	
+	void delet(int j){
+		arr[j] = arr[C_size];
+		C_size--;
+		
+		int i=j;
+		while(left(i)<C_size){
+			if(arr[left(i)] < arr[i]  &&  arr[right(i)] < arr[i]){
+				return;
+			}
+			else if(arr[left(i)] >= arr[right(i)]){
+				swap_p(left(i));
+				i = left(i);
+			}
+			else if(arr[left(i)] < arr[right(i)]){
+				swap_p(right(i));
+				i = right(i);
+			}
+		}	
+	} 
+	
+	*/
 
 
 	int delet(int i){
