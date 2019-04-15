@@ -122,19 +122,19 @@ class Heap{
 	void MinHeapify(int i){
 
 			if(i>C_size) return;
-			else if(2*i+1>C_size) return;
-			else if(arr[i]<arr[2*i+1] and arr[i]<arr[2*i+2]) return;
-			else if(2*i+2>C_size and 2*i+1<=C_size){
-				 swap(arr[i],arr[2*i+1]); 
+			else if(left(i)>C_size) return;
+			else if(arr[i]<arr[left(i)] && arr[i]<arr[right(i)]) return;
+			else if(right(i)>C_size && left(i)<=C_size){
+				 swap(arr[i],arr[left(i)]); 
 			}
-			else if(arr[2*i+1]>arr[2*i+2]) {
-				swap(arr[2*i+2],arr[i]);
-				MinHeapify(2*i+2);
+			else if(arr[left(i)]>arr[right(i)]) {
+				swap(arr[right(i)],arr[i]);
+				MinHeapify(right(i));
 			}
 
 			else {
-				swap(arr[2*i+1],arr[i]);
-				MinHeapify(2*i+1);
+				swap(arr[left(i)],arr[i]);
+				MinHeapify(left(i));
 			}
 	}
 
